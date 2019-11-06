@@ -11,3 +11,21 @@
 # Hello World!
 
 HTTP-сервер на Go пишется довольно быстро. Вот пример с одним обработчиком, возвращающим «Hello World!»:
+
+```
+package main
+
+import (
+  "fmt"
+  "net/http"
+  )
+  func main() {
+  http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+  fmt.Fprintf(w, "Hello World!")
+  })
+  http.ListenAndServe(":80", nil)
+}
+```
+Если вы запустите приложение и откроете в браузере страницу http://localhost, то увидите текст "Hello World".
+
+В дальнейшем мы используем этот код в качестве основы, но сначала нужно понять, как он работает.
