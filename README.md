@@ -140,7 +140,7 @@ func NewRouter() http.Handler {
     router.Mount("/api/v1/", v1.NewRouter())
     return router
 }
-http.Serve(autocert.NewListener("example.com"), NewRouter())
+http.Server(autocert.NewListener("example.com"), NewRouter())
 ```
 
 Возможность организации маршрутов и применение продвинутых правил маршрутизации упрощает структуризацию и сопровождение крупных приложений.
