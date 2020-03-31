@@ -40,7 +40,7 @@ import (
 
 ```
 type Handler interface {
-        ServeHTTP(ResponseWriter, *Request)
+        ServerHTTP(ResponseWriter, *Request)
 }
 ```
 
